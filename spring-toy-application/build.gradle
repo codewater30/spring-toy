@@ -1,0 +1,15 @@
+plugins { 
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
+}
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    implementation project(':spring-toy-core')
+    implementation project(':spring-toy-api')
+    implementation 'org.springframework.boot:spring-boot-starter'
+}
+
+//application {
+//    mainClassName = 'com.codewater.springtoy.SpringToyApplication'
+//}

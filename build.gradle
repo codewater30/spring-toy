@@ -1,0 +1,44 @@
+plugins {
+	id 'java'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.codewater'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'io.spring.dependency-management'
+
+	repositories {
+		mavenCentral()
+	}
+
+	group = 'com.codewater'
+	version = '0.0.1-SNAPSHOT'
+	sourceCompatibility = '11'
+
+	dependencyManagement {
+		imports {
+			mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.7.RELEASE")
+		}
+	}
+
+	dependencies {
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+	}
+
+	test {
+		useJUnitPlatform()
+	}
+}
+

@@ -1,0 +1,4 @@
+rootProject.name = 'spring-toy'
+include 'spring-toy-api'
+include 'spring-toy-application'
+include 'spring-toy-core'
